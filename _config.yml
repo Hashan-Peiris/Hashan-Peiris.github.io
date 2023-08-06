@@ -2,18 +2,18 @@
 markdown: kramdown
 
 # URL of the Site
-url: ''
+url: 'https://hashan-peiris.github.io/'
 # Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
 baseurl: 
 
 # Title of the Site
-title: What A Theme
+title: Hashan C. Peiris
 # Description of the Site
-description: A customizable Jekyll portfolio theme
+description: A sneak peak into what am I all about...
 # URL of Image of the Site
 site-image: /WhatATheme/assets/images/meta.jpg
 # Keywords of the Site
-site-keywords: Site, Template, Theme
+site-keywords: Hashan C. Peiris, Hashan, Peiris, Binghamton University
 # URL for the Image of custom Favicon
 favicon-url: 
 
@@ -22,13 +22,13 @@ heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto
 
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
-email: thedevslot@gmail.com
-facebook_username: thedevslot
-twitter_username: thedevslot
-instagram_username: thedevslot
-linkedin_username: thedevslot
-github_username:  thedevslot
-youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
+email: peiris.mdhc@gmail.com
+facebook_username: Hashan Peiris
+twitter_username: \@HashanPeiris6
+#instagram_username: thedevslot
+linkedin_username: hashan-peiris-aa9b65146
+github_username:  Hashan_Peiris
+youtube_channel_id: /
 reddit_username: /
 behance_username: /
 dribbble_username: /
