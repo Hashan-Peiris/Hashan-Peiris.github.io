@@ -12,8 +12,6 @@ layout: compress
   {% include about.html %}
   {% include experience.html %}
   {% include contact.html %}
-  {% include publications.html %}
-  {% include testimonials.html %}
   <!--Footer begins here-->
   {% include footer.html %}
 </body>
