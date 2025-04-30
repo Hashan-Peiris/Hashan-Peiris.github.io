@@ -7,15 +7,15 @@ url: 'https://hashan-peiris.github.io/'
 baseurl: 
 
 # Title of the Site
-title: Hashan C. Peiris - Materials Scientist title: Hashan C. Peiris Engineer
+title: Hashan C. Peiris
 # Description of the Site
-description: Computational Materials Scientist description: A sneak peak into what I am all about...It's still under development...Check again later! Engineer; Research, Innovation, Manufacturing, Collaboration
+description: A sneak peak into what I am all about...It's still under development...Check again later!
 # URL of Image of the Site
 site-image: /WhatATheme/assets/images/meta.jpg
 # Keywords of the Site
-site-keywords: Hashan C. Peiris, Materials Scientist, Research, Industry, Binghamton University, DFT, AIMD, ML, Pressure Vessels, Manufacturing
+site-keywords: Hashan C. Peiris, Hashan, Peiris, Binghamton University
 # URL for the Image of custom Favicon
-favicon-url: /assets/images/logo.png
+favicon-url: 
 
 # URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
 heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
@@ -42,14 +42,13 @@ google-analytics: UA-163806439-1
 disqus-shortname: thedevslot
 
 # Name of the Author
-author-name: Hashan C. Peiris
+author-name: TheDevsLot
 # URL for the Image of the Author
-author-image: /assets/images/author-placeholder.jpg
+author-image: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png
 # 60 Words About the Author
-author-about: >
-  I am a computational materials scientist and engineer with experience spanning both academia and industry. My research involves advanced simulations (DFT, AIMD, ML) to solve real-world challenges in batteries, catalysis, interfacial chemistry, and materials design—resulting in multiple publications and funded proposals. I’ve worked hands-on in large-scale manufacturing, inspection, and failure analysis in the chemical, energy, and automotive sectors. I’m recognized for interdisciplinary collaboration, technical mentoring, and effective project management within high-performing research and industrial teams.
+author-about: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget pharetra velit, dapibus bibendum ex. Maecenas vitae laoreet mauris, ac luctus metus. Aliquam luctus velit vel ipsum feugiat, vel venenatis mauris hendrerit. Sed at vulputate sapien, eget vehicula dolor. Aliquam volutpat pulvinar neque sit amet sodales.
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
-author-url: https://www.linkedin.com/in/m-d-hashan-c-peiris-aa9b65146/
+author-url: https://github.com/thedevslot
 
 # SASS
 sass:
