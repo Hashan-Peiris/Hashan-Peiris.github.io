@@ -7,7 +7,7 @@ url: 'https://hashan-peiris.github.io/'
 baseurl: 
 
 # Title of the Site
-title: "Hashan C. Peiris – Computational Materials Scientist & Engineer"
+title: "Hashan C. Peiris – Computational Materials Scientist title: "Hashan C. Peiris – Computational Materials Scientist title: Hashan C. Peiris - Materials Scientist title: Hashan C. Peiris Engineer Engineer" Engineer"
 # Description of the Site
 description: "Advanced research and industrial experience in computational materials science, catalysis, battery interfaces, failure analysis, and manufacturing. Proven ability to drive interdisciplinary projects across academia and industry."
 # URL of Image of the Site
@@ -57,6 +57,7 @@ sass:
 
 # Build settings
 plugins:
+  - jekyll-admin
   - jekyll-feed
 
 # Permalink
