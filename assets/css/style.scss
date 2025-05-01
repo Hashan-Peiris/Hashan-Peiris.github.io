@@ -84,6 +84,21 @@ a.navbar-item.is-active {
     }
 }
 
+/* Align the "About" heading with the paragraph */
+.about-section {
+  text-align: left; /* Ensures text is aligned to the left */
+  margin: 0 auto; /* Centers the section horizontally */
+  padding: 20px; /* Adds spacing around the content */
+}
+
+.about-section h1, .about-section h2, .about-section h3 {
+  margin-bottom: 10px; /* Adds spacing between the heading and paragraph */
+}
+
+.about-section p {
+  margin-top: 0; /* Removes unnecessary margin above the paragraph */
+}
+
 #contact {
     #contact-button {
         margin: 0.5rem auto;
