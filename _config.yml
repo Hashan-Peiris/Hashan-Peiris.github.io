@@ -7,7 +7,7 @@ url: 'https://hashan-peiris.github.io/'
 baseurl: 
 
 # Title of the Site
-title: "Hashan C. Peiris – Computational Materials Scientist & Engineer"
+title: "Hashan C. Peiris"
 # Description of the Site
 description: "Advanced research and industrial experience in computational materials science, catalysis, battery interfaces, failure analysis, and manufacturing. Proven ability to drive interdisciplinary projects across academia and industry."
 # URL of Image of the Site
@@ -24,16 +24,16 @@ heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
 email: peiris.mdhc@gmail.com
-facebook_username: Hashan Peiris
-twitter_username: \@HashanPeiris6
+#facebook_username: Hashan Peiris
+#twitter_username: \@HashanPeiris6
 #instagram_username: thedevslot
-linkedin_username: hashan-peiris-aa9b65146
+linkedin_username: m-d-hashan-c-peiris-aa9b65146
 github_username:  Hashan-Peiris
-youtube_channel_id: /
-reddit_username: /
-behance_username: /
-dribbble_username: /
-spotify_username: /
+#youtube_channel_id: /
+#reddit_username: /
+#behance_username: /
+#dribbble_username: /
+#spotify_username: /
 
 # Google Analytics
 google-analytics: UA-163806439-1
@@ -44,7 +44,7 @@ disqus-shortname: thedevslot
 # Name of the Author
 author-name: Hashan C. Peiris
 # URL for the Image of the Author
-author-image: /assets/images/author-placeholder.jpg
+author-image: /assets/images/Hashan-Peiris.jpg
 # 60 Words About the Author
 author-about: >
   Computational materials scientist and engineer delivering impactful solutions to challenges at the edge of research and industry. Skilled in advanced modeling (DFT, AIMD, ML), hands-on manufacturing plant operations, system inspection, quality/failure analysis, and interdisciplinary project leadership. Recognized for mentorship, grant writing, and effective project management across high-performing teams.
