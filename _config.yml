@@ -45,9 +45,12 @@ disqus-shortname: thedevslot
 author-name: Hashan C. Peiris
 # URL for the Image of the Author
 author-image: /assets/images/Hashan-Peiris.jpg
-# 60 Words About the Author
 author-about: >
-  Computational materials scientist and engineer delivering impactful solutions to challenges at the edge of research and industry. Skilled in advanced modeling (DFT, AIMD, ML), hands-on manufacturing plant operations, system inspection, quality/failure analysis, and interdisciplinary project leadership. Recognized for mentorship, grant writing, and effective project management across high-performing teams.
+  Computational materials scientist and engineer with a proven track record of delivering impactful solutions to complex challenges at the intersection of research and industry. Expertise in advanced modeling techniques, including Density Functional Theory (DFT), Ab Initio Molecular Dynamics (AIMD), and Machine Learning (ML).
+
+  Extensive hands-on experience in manufacturing plant operations, system inspection, quality assurance, and failure analysis. Adept at leading interdisciplinary projects, driving innovation, and achieving measurable outcomes.
+
+  Recognized for mentorship, grant writing, and effective project management. Demonstrated ability to foster collaboration within high-performing teams and deliver results in both academic and industrial settings.
 author-url: https://www.linkedin.com/in/m-d-hashan-c-peiris-aa9b65146/
 
 # SASS
