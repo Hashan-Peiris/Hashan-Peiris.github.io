@@ -19,16 +19,16 @@
 
 a.navbar-item:hover,
 .navbar-link:hover {
-    background-color: rgba($color: #fff, $alpha: 0.25) !important;
+    background-color: rgba(#fff, 0.25) !important;
     color: white !important;
 }
 
 a.navbar-item.is-active {
-    background-color: rgba($color: #fff, $alpha: 0.25) !important;
+    background-color: rgba(#fff, 0.25) !important;
     color: white !important;
 
     &:hover {
-        background-color: rgba($color: #fff, $alpha: 0.25) !important;
+        background-color: rgba(#fff, 0.25) !important;
         color: grey;
     }
 }
@@ -82,6 +82,21 @@ a.navbar-item.is-active {
         min-width: 25vmax;
         margin: 0.5rem;
     }
+}
+
+/* Align the "About" heading with the paragraph */
+.about-section {
+  text-align: left; /* Ensures text is aligned to the left */
+  margin: 0 auto; /* Centers the section horizontally */
+  padding: 20px; /* Adds spacing around the content */
+}
+
+.about-section h1, .about-section h2, .about-section h3 {
+  margin-bottom: 10px; /* Adds spacing between the heading and paragraph */
+}
+
+.about-section p {
+  margin-top: 0; /* Removes unnecessary margin above the paragraph */
 }
 
 #contact {
@@ -284,7 +299,7 @@ a.navbar-item.is-active {
     .card {
         transition: all 0.25s ease;
         &:hover {
-            background-color: rgba($color: #000000, $alpha: 0.90)!important;
+            background-color: rgba(#000000, 0.90)!important;
         }
     }
 }
