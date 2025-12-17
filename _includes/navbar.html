@@ -4,7 +4,7 @@
         <!-- logo or branding image on left side -->
         <div class="navbar-brand">
             <a class="navbar-item"
-                href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">
+                href="{{ '/' | relative_url }}#hero">
                 <strong>{{site.title}}</strong>
             </a>
             <div class="navbar-burger" data-target="navbar-menu">
@@ -21,12 +21,12 @@
             </div> -->
             <!-- navbar items | right side -->
             <div class="navbar-end">
-                <a class="navbar-item {% if page.layout == 'default' %}is-active{% endif %}"
-                    href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">HOME</a>
-                <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#about">ABOUT</a>
-                <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#contact">CONTACT</a>
+                <a class="navbar-item {% if page.layout == 'default' %}is-active{% endif %}" id="nav-home"
+                    href="{{ '/' | relative_url }}#hero">HOME</a>
+                <a class="navbar-item" id="nav-about" href="{{ '/' | relative_url }}#about">ABOUT</a>
+                <a class="navbar-item" id="nav-contact" href="{{ '/' | relative_url }}#contact">CONTACT</a>
                 <a class="navbar-item {% if page.layout == 'blog' %}is-active{% endif %}"
-                    href="{{site.url}}{{site.baseurl}}/blog">BLOG</a>
+                    href="{{ '/blog' | relative_url }}">BLOG</a>
                 {% include dropdown.html %}
             </div>
 

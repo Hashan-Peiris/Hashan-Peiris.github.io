@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
@@ -9,15 +9,20 @@ source "http://rubygems.org"
 # Happy Jekylling!
 
 gem "jekyll"
+gem "csv"
+gem "bigdecimal"
 gem "rack"
+gem "rackup"
 gem "webrick"
+
+
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed"
-  gem 'jekyll-admin', "0.11.1"
+  #gem 'jekyll-admin', "0.11.1"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -28,4 +33,6 @@ install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
 end
 
 # Performance-booster for watching directories on Windows
-gem "wdm", :install_if => Gem.win_platform?
+#gem "wdm", "~> 0.1.1", platforms: [:mingw, :mswin], require: false
+# Use the following line to enable Jekyll's optional dependency 'jekyll-sitemap'
+# gem "jekyll-sitemap"        

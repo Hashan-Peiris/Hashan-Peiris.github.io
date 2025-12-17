@@ -1,0 +1,28 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+  {% include navbar.html %}
+  <section class="hero is-fullheight" id="publications">
+    <div class="hero-body">
+      <div class="container">
+        <div class="section">
+          <p class="subtitle is-uppercase has-text-weight-medium has-text-grey">Publications</p>
+          <h1 class="title is-2">Selected work across research and industry</h1>
+          <p class="publication-intro">Entries are powered by <code>_data/publications.yml</code>. Update the data file to add new papers without touching layouts.</p>
+        </div>
+        {% include publication-list.html publications=site.data.publications %}
+      </div>
+    </div>
+  </section>
+  {% include footer.html %}
+</body>
+
+</html>

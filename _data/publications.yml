@@ -1,0 +1,55 @@
+- title: "Interface Chemistry of Ni-Rich Battery Cathodes"
+  authors:
+    - "Hashan C. Peiris"
+    - "Collaborators"
+  venue: "Cell Reports Physical Science"
+  year: 2024
+  tags: [Battery Interfaces, DFT, AIMD]
+  links:
+    doi: "https://doi.org/10.1016/j.xxxx.2024.123456"
+    pdf: "https://example.com/papers/interface-chemistry.pdf"
+    arxiv: "https://arxiv.org/abs/2401.00001"
+  bibtex: |
+    @article{peiris2024interface,
+      title={Interface Chemistry of Ni-Rich Battery Cathodes},
+      author={Peiris, Hashan C. and Collaborators},
+      journal={Cell Reports Physical Science},
+      year={2024},
+      doi={10.1016/j.xxxx.2024.123456}
+    }
+
+- title: "Molecular Solvation Dynamics in Multivalent Electrolytes"
+  authors:
+    - "Hashan C. Peiris"
+    - "Collaborators"
+  venue: "Colloids and Surfaces"
+  year: 2023
+  tags: [Electrolytes, Molecular Dynamics, Machine Learning]
+  links:
+    doi: "https://doi.org/10.1016/j.xxxx.2023.654321"
+    pdf: "https://example.com/papers/solvation-dynamics.pdf"
+  bibtex: |
+    @article{peiris2023solvation,
+      title={Molecular Solvation Dynamics in Multivalent Electrolytes},
+      author={Peiris, Hashan C. and Collaborators},
+      journal={Colloids and Surfaces},
+      year={2023},
+      doi={10.1016/j.xxxx.2023.654321}
+    }
+
+- title: "Thermo-Mechanical Stability of Solder Alloys"
+  authors:
+    - "Hashan C. Peiris"
+    - "Collaborators"
+  venue: "Conference Proceedings"
+  year: 2022
+  tags: [Solder Alloys, Finite Element Analysis, Materials Modeling]
+  links:
+    pdf: "https://example.com/papers/solder-stability.pdf"
+  bibtex: |
+    @inproceedings{peiris2022solder,
+      title={Thermo-Mechanical Stability of Solder Alloys},
+      author={Peiris, Hashan C. and Collaborators},
+      booktitle={Conference Proceedings},
+      year={2022}
+    }
