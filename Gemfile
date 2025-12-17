@@ -9,7 +9,6 @@ source "https://rubygems.org"
 # Happy Jekylling!
 
 gem "jekyll"
-gem "rack", "~> 2.2"
 gem "webrick"
 gem "csv"
 gem "bigdecimal"
@@ -19,7 +18,7 @@ gem "bigdecimal"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed"
-  gem 'jekyll-admin', "0.11.1"
+  #gem 'jekyll-admin', "0.11.1"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -30,4 +29,6 @@ install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
 end
 
 # Performance-booster for watching directories on Windows
-gem "wdm", :install_if => Gem.win_platform?
+#gem "wdm", "~> 0.1.1", platforms: [:mingw, :mswin], require: false
+# Use the following line to enable Jekyll's optional dependency 'jekyll-sitemap'
+# gem "jekyll-sitemap"        
