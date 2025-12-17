@@ -9,6 +9,10 @@ source "http://rubygems.org"
 # Happy Jekylling!
 
 gem "jekyll"
+gem "csv"
+gem "bigdecimal"
+gem "rack"
+>>>>>>> theirs
 gem "webrick"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
