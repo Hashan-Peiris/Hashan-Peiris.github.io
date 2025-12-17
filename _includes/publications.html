@@ -1,48 +1,61 @@
 <section class="section has-background-white-ter" id="publications">
   <div class="container">
-    <h2 class="title is-size-3 has-text-centered">Selected Publications & Presentations</h2>
-    <ul class="content" style="max-width:750px;margin:auto;">
-      <li>
-        <strong>Peiris, H.C.</strong>, Smeu, M. et al. 
-        <a href="https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(24)00308-4" target="_blank">
-          "Electrolyte reactivity, oxygen states, and degradation mechanisms of nickel-rich cathodes"
-        </a>, <em>Cell Reports Physical Science</em>, 2024.
-        <br>
-        <img src="/assets/images/TOC_Electrolyte_Reactivity.jpg" alt="TOC Image" style="max-width:100%;height:auto;">
-      </li>
-      <li>
-        <strong>Peiris, H.C.</strong>, Smeu, M. et al. 
-        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0927775723009159" target="_blank">
-          "Computational determination of the solvation structure of LiBF4 and LiPF6 salts in battery electrolytes"
-        </a>, <em>Colloids Surf. A</em>, 2023.
-        <br>
-        <img src="/assets/images/TOC_Solvation_Structure.jpg" alt="TOC Image" style="max-width:100%;height:auto;">
-      </li>
-      <li>
-        <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.4c14135" target="_blank">
-          "High-pressure nitrous oxide reduction by a Cu(II) carbon nitride electrocatalyst"
-        </a>, <em>In prep.</em>, 2025.
-      </li>
-      <li>
-        <strong>Peiris, H.C.</strong>. 
-        <a href="https://engineer.sljol.info/articles/10.4038/engineer.v53i2.7408" target="_blank">
-          "Study of the Effect of Sulphide Stress Corrosion on the Load Bearing Capability of API 5L Grade B Steel used in Petroleum Pipelines"
-        </a>, <em>Engineer (Sri Lanka)</em>, 2019.
-        <br>
-        <img src="/assets/images/TOC_Sulphide_Stress.jpg" alt="TOC Image" style="max-width:100%;height:auto;">
-      </li>
-      <li>
-        <strong>Peiris, H.C.</strong>, et al. 
-        <a href="https://pubs.acs.org/doi/abs/10.1021/acsami.4c14135" target="_blank">
-          "Polyvinylidene Fluoride (PVDF)–Trimethylaluminum (TMA) Chemistry: First-Principles Investigation and Experimental Insights"
-        </a>, <em>ACS Appl. Interfaces Mater.</em>, 2025.
-        <br>
-        <img src="/assets/images/TOC_PVDF_TMA.jpg" alt="TOC Image" style="max-width:100%;height:auto;">
-      </li>
-      <li><strong>Peiris, H.C.</strong>, Smeu, M., et al. "Thermo-mechanical modeling of Sn-based solder alloys," Conf. Proc., IEEC, 2022.</li>
-      <li><strong>Peiris, H.C.</strong>, et al. "High-pressure nitrous oxide reduction by a Cu(II) carbon nitride electrocatalyst," Submitted to JACS.</li>
-      <li>10+ international conference presentations (IEEC, SRC, ACS) on DFT/AIMD & applied materials science topics.</li>
-    </ul>
-    <div class="has-text-centered"><span class="is-size-6 has-text-grey">Full list on request • <a href="{{site.baseurl}}/assets/Resume_Hashan_Peiris_v5_INDUSTRY.pdf" target="_blank">Download CV</a></span></div>
+    <h2 class="title is-size-3 has-text-centered">Publications & Presentations</h2>
+    {% assign sorted_pubs = site.data.publications | sort: 'year' | reverse %}
+    <div class="content" style="max-width: 900px; margin: auto;">
+      {% for pub in sorted_pubs %}
+        <article class="box mb-4">
+          <div class="level">
+            <div class="level-left">
+              <div>
+                <h3 class="title is-4">{{ pub.title }}</h3>
+                <p class="is-size-6 has-text-grey">{{ pub.authors }}</p>
+                <p class="is-size-6 has-text-weight-semibold">{{ pub.venue }} &bull; {{ pub.year }}</p>
+                {% if pub.summary %}
+                  <p class="mt-2">{{ pub.summary }}</p>
+                {% endif %}
+                {% if pub.tags %}
+                  <div class="tags mt-2">
+                    {% for tag in pub.tags %}
+                      <span class="tag is-light">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <div class="buttons mt-3">
+                  {% if pub.links.url %}
+                    <a class="button is-link is-light" href="{{ pub.links.url }}" target="_blank" rel="noopener">View</a>
+                  {% endif %}
+                  {% if pub.links.pdf %}
+                    <a class="button is-link is-outlined" href="{{ pub.links.pdf }}" target="_blank" rel="noopener">PDF</a>
+                  {% endif %}
+                  <button class="button is-small is-dark" onclick="toggleBibtex(this)" data-target="bib-{{ forloop.index }}">BibTeX</button>
+                </div>
+              </div>
+            </div>
+            {% if pub.image %}
+              <div class="level-right">
+                <figure class="image" style="max-width: 220px;">
+                  <img src="{{ pub.image }}" alt="{{ pub.title }} graphic">
+                </figure>
+              </div>
+            {% endif %}
+          </div>
+          {% if pub.bibtex %}
+            <pre class="is-size-7 bibtex" id="bib-{{ forloop.index }}" style="display:none;">{{ pub.bibtex | escape }}</pre>
+          {% endif %}
+        </article>
+      {% endfor %}
+      <div class="has-text-centered"><span class="is-size-6 has-text-grey">Full list on request • <a href="{{site.baseurl}}/assets/Resume_Hashan_Peiris_v5_INDUSTRY.pdf" target="_blank">Download CV</a></span></div>
+    </div>
   </div>
 </section>
+
+<script>
+  function toggleBibtex(btn) {
+    const targetId = btn.getAttribute('data-target');
+    const panel = document.getElementById(targetId);
+    if (!panel) return;
+    const isHidden = panel.style.display === 'none' || panel.style.display === '';
+    panel.style.display = isHidden ? 'block' : 'none';
+  }
+</script>

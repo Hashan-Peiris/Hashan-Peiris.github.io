@@ -1,32 +1,48 @@
 - name: Computing Interface Chemistry of Battery Cathodes
+  slug: battery-interfaces
+  categories: ["Research", "Batteries"]
   image: https://images.pexels.com/photos/256369/pexels-photo-256369.jpeg?h=400&w=800&auto=compress
-  link: ''
+  link: ""
   description: Modeling chemical activity, degradation, and reaction pathways at Ni/Co-rich interfaces of NMC-811 cathodes using advanced DFT and ab initio MD methods. Results published in Cell Reports Physical Science.
 - name: Molecular Solvation Dynamics in Electrolytes
+  slug: electrolyte-solvation
+  categories: ["Research", "Electrolytes"]
   image: https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?h=400&w=800&auto=compress
-  link: ''
+  link: ""
   description: Investigated solvation shell structures and interfacial phenomena for Li/Ca-based salts via DFT/AIMD and machine learning models; published in Colloids and Surfaces.
 - name: Thermo-Mechanical Stability of Solder Alloys
+  slug: solder-alloys
+  categories: ["Research", "Reliability"]
   image: https://images.pexels.com/photos/3734426/pexels-photo-3734426.jpeg?h=400&w=800&auto=compress
-  link: ''
+  link: ""
   description: Studied Sn-based alloy properties using DFT, ML, and FEA. Findings led to successful funding proposals at IEEC and SRC and multiple conference presentations.
 - name: Degradation of PFAS/Polymers Using ALD Coatings
+  slug: pfas-ald
+  categories: ["Research", "Polymers"]
   image: https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?h=400&w=800&auto=compress
-  link: ''
+  link: ""
   description: Combined computational modeling and experiment to uncover reaction mechanisms of PVDF (PFAS) in TMA-ALD coatings. Published in ACS Applied Interfaces & Materials.
 - name: Single-Molecule Junctions & Au-S Bond Energetics
+  slug: break-junctions
+  categories: ["Research", "Transport"]
   image: https://images.pexels.com/photos/415071/pexels-photo-415071.jpeg?h=400&w=800&auto=compress
-  link: ''
+  link: ""
   description: Used AIMD/DFT and ML methods to study electronic transport in break-junction simulations, and Au–S bond breaking energetics with both experimental and theoretical approaches.
 - name: Pressure Vessel Inspection & Failure Analysis
+  slug: pressure-vessels
+  categories: ["Industry", "Inspection"]
   image: https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?h=400&w=800&auto=compress
-  link: ''
+  link: ""
   description: Certified inspector (API 510) at Chevron; supervised pressure safety valve testing, maintenance SOPs, and regulatory compliance in industrial facilities.
 - name: Wheel Manufacturing Quality & Data Analysis
+  slug: wheel-quality
+  categories: ["Industry", "Quality"]
   image: https://images.pexels.com/photos/534033/pexels-photo-534033.jpeg?h=400&w=800&auto=compress
-  link: ''
+  link: ""
   description: Led quality assurance and failure analysis for Michelin/Camso wheel manufacturing division using NDT, SEM/EDS, and root cause analysis.
 - name: Industrial Gas Production and Automation
+  slug: industrial-gas
+  categories: ["Industry", "Operations"]
   image: https://images.pexels.com/photos/221357/pexels-photo-221357.jpeg?auto=compress&w=800
-  link: ''
+  link: ""
   description: Optimized bottling and production line processes for industrial gases (N2, O2, C2H2), ensuring quality, safety and efficiency improvements.

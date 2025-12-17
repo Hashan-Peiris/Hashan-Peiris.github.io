@@ -3,30 +3,39 @@
     <div class="columns is-vcentered">
       <div class="column is-one-third">
         <figure class="image is-256x256">
-          <img class="is-rounded" src="/assets/images/Hashan-Peiris.jpg" alt="Hashan Peiris">
+          <img class="is-rounded" src="{{ site.data.profile.headshot }}" alt="{{ site.data.profile.name }}">
         </figure>
       </div>
       <div class="column">
+        <p class="is-size-6 has-text-grey">{{ site.data.profile.role }} &bull; {{ site.data.profile.location }}</p>
         <h2 class="title is-size-2 has-text-left">About</h2>
-        <p class="is-size-5">Computational materials scientist and engineer with a proven track record of delivering impactful solutions to complex challenges at the intersection of research and industry. Expertise in advanced modeling techniques, including Density Functional Theory (DFT), Ab Initio Molecular Dynamics (AIMD), and Machine Learning (ML). Extensive hands-on experience in manufacturing plant operations, system inspection, quality assurance, and failure analysis.</p>
-        <p class="is-size-5">Adept at leading interdisciplinary projects, driving innovation, and achieving measurable outcomes. Recognized for mentorship, grant writing, and effective project management. Demonstrated ability to foster collaboration within high-performing teams and deliver results in both academic and industrial settings.</p>
+        {% for paragraph in site.data.profile.summary %}
+          <p class="is-size-5">{{ paragraph }}</p>
+        {% endfor %}
+
         <h3 class="subtitle is-size-4 mt-6">Key Skills</h3>
-        <p class="is-size-5 mt-4">Programming/Tools: Python, Visual Basic, Git, Bash, LaTeX, MATLAB, HPC systems<br>
-        Simulation/Software: VASP, DeePMD, USPEX, Quantum Espresso, LAMMPS, Orca, SolidWorks, Abaqus, AutoCAD<br>
-        Other: Proposal writing, project management, experimental design, scientific communication, teamwork, FEA, ML data analysis</p>
+        {% for block in site.data.profile.skills %}
+          <p class="is-size-5 mt-2">
+            <strong>{{ block.label }}:</strong>
+            {{ block.items | join: ', ' }}
+          </p>
+        {% endfor %}
+
         <h3 class="subtitle is-size-4 mt-6">Education</h3>
-        <p class="is-size-5 mt-4">Binghamton University (SUNY) &mdash; Ph.D. Candidate, Materials Science & Engineering (Exp. 2025, GPA: 3.8)<br>
-        University of West London &mdash; MBA, Oct 2019<br>
-        University of Moratuwa &mdash; BSc in Materials Science & Engineering, First Class Honors, Dec 2018<br>
-        Chartered Management Accountant (UK) &mdash; Passed Finalist, Oct 2016</p>
+        {% for edu in site.data.profile.education %}
+          <p class="is-size-5 mt-2">
+            <strong>{{ edu.institution }}</strong> &mdash; {{ edu.credential }} ({{ edu.timeline }})
+            {% if edu.details %}<br>{{ edu.details }}{% endif %}
+          </p>
+        {% endfor %}
       </div>
     </div>
     <div class="buttons is-centered mt-5">
-      <a class="button is-primary is-medium" href="/assets/Hashan_Peiris_Resume.pdf" download>
+      <a class="button is-primary is-medium" href="{{ site.data.profile.resume.url }}" target="_blank" rel="noopener">
         <span class="icon">
           <i class="fas fa-download"></i>
         </span>
-        <span>Download Full CV (PDF)</span>
+        <span>{{ site.data.profile.resume.label }}</span>
       </a>
     </div>
   </div>
