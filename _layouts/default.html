@@ -18,26 +18,45 @@ layout: compress
   {% include footer.html %}
 </body>
 <script>
-  var navItems = document.getElementsByClassName('navbar-item');
-  var heroes = document.getElementsByClassName('hero');
-  const viewOffset = 200; 
+  document.addEventListener('DOMContentLoaded', function () {
+    var navBySection = new Map([
+      ['hero', document.getElementById('nav-home')],
+      ['about', document.getElementById('nav-about')],
+      ['contact', document.getElementById('nav-contact')],
+    ]);
 
-  window.addEventListener("scroll", function (event) {
-    var scroll = this.scrollY;
-    var position = window.pageYOffset;
+    var sections = Array.from(navBySection.keys())
+      .map(function (id) { return document.getElementById(id); })
+      .filter(Boolean);
 
-    for (var i = 0; i < navItems.length; i++) {
-      navItems[i].classList.remove('is-active');
+    function setActive(sectionId) {
+      navBySection.forEach(function (el) {
+        if (el) el.classList.remove('is-active');
+      });
+      var active = navBySection.get(sectionId);
+      if (active) active.classList.add('is-active');
     }
 
-    for (var i = 0; i < heroes.length; i++) {
-        var sectionTop = heroes[i].offsetTop-viewOffset;
-        var sectionBottom = heroes[i].offsetTop + heroes[i].offsetHeight-viewOffset;
+    if (!('IntersectionObserver' in window)) {
+      setActive('hero');
+      return;
+    }
 
-        if (scroll >= sectionTop && scroll < sectionBottom) {
-          navItems[i+1].classList.add('is-active');
+    var observer = new IntersectionObserver(function (entries) {
+      var visible = entries
+        .filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; })[0];
+
+      if (visible && visible.target && visible.target.id) {
+        setActive(visible.target.id);
       }
-    }
+    }, {
+      rootMargin: '-30% 0px -65% 0px',
+      threshold: [0.05, 0.15, 0.3, 0.6],
+    });
+
+    sections.forEach(function (section) { observer.observe(section); });
+    setActive('hero');
   });
 </script>
 

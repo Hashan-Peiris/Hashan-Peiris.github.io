@@ -1,33 +1,60 @@
 <section class="section" id="about">
   <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-one-third">
-        <figure class="image is-256x256">
-          <img class="is-rounded" src="/assets/images/Hashan-Peiris.jpg" alt="Hashan Peiris">
-        </figure>
+    <div class="box is-static">
+      <div class="columns is-variable is-7 is-vcentered">
+        <div class="column is-4-desktop is-12-tablet has-text-centered">
+          <figure class="image about-photo">
+            <img class="is-rounded" src="{{ '/assets/images/Hashan-Peiris.jpg' | relative_url }}" alt="Hashan Peiris">
+          </figure>
+        </div>
+
+        <div class="column">
+          <h2 class="title is-size-2 section-title has-text-left">About</h2>
+
+          <div class="prose">
+            <p class="is-size-5">
+              Computational materials scientist and engineer with a proven track record of delivering impactful solutions to complex challenges at the intersection of research and industry. Expertise in advanced modeling techniques, including Density Functional Theory (DFT), Ab Initio Molecular Dynamics (AIMD), and Machine Learning (ML). Extensive hands-on experience in manufacturing plant operations, system inspection, quality assurance, and failure analysis.
+            </p>
+            <p class="is-size-5">
+              Adept at leading interdisciplinary projects, driving innovation, and achieving measurable outcomes. Recognized for mentorship, grant writing, and effective project management. Demonstrated ability to foster collaboration within high-performing teams and deliver results in both academic and industrial settings.
+            </p>
+          </div>
+
+          <div class="columns is-variable is-6 mt-5">
+            <div class="column">
+              <h3 class="title is-size-5 section-title">Key Skills</h3>
+              <div class="content">
+                <ul>
+                  <li><strong>Programming/Tools:</strong> Python, Visual Basic, Git, Bash, LaTeX, MATLAB, HPC systems</li>
+                  <li><strong>Simulation/Software:</strong> VASP, DeePMD, USPEX, Quantum Espresso, LAMMPS, Orca, SolidWorks, Abaqus, AutoCAD</li>
+                  <li><strong>Other:</strong> Proposal writing, project management, experimental design, scientific communication, teamwork, FEA, ML data analysis</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="column">
+              <h3 class="title is-size-5 section-title">Education</h3>
+              <div class="content">
+                <ul>
+                  <li><strong>Binghamton University (SUNY):</strong> Ph.D. Candidate, Materials Science &amp; Engineering (Exp. 2025, GPA: 3.8)</li>
+                  <li><strong>University of West London:</strong> MBA, Oct 2019</li>
+                  <li><strong>University of Moratuwa:</strong> BSc in Materials Science &amp; Engineering, First Class Honors, Dec 2018</li>
+                  <li><strong>Chartered Management Accountant (UK):</strong> Passed Finalist, Oct 2016</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="buttons is-centered mt-5">
+            <a class="button is-primary is-medium is-rounded" href="{{ '/assets/Hashan_Peiris_Resume.pdf' | relative_url }}" download>
+              <span class="icon">
+                <i class="fas fa-download" aria-hidden="true"></i>
+              </span>
+              <span>Download Full CV (PDF)</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="column">
-        <h2 class="title is-size-2 has-text-left">About</h2>
-        <p class="is-size-5">Computational materials scientist and engineer with a proven track record of delivering impactful solutions to complex challenges at the intersection of research and industry. Expertise in advanced modeling techniques, including Density Functional Theory (DFT), Ab Initio Molecular Dynamics (AIMD), and Machine Learning (ML). Extensive hands-on experience in manufacturing plant operations, system inspection, quality assurance, and failure analysis.</p>
-        <p class="is-size-5">Adept at leading interdisciplinary projects, driving innovation, and achieving measurable outcomes. Recognized for mentorship, grant writing, and effective project management. Demonstrated ability to foster collaboration within high-performing teams and deliver results in both academic and industrial settings.</p>
-        <h3 class="subtitle is-size-4 mt-6">Key Skills</h3>
-        <p class="is-size-5 mt-4">Programming/Tools: Python, Visual Basic, Git, Bash, LaTeX, MATLAB, HPC systems<br>
-        Simulation/Software: VASP, DeePMD, USPEX, Quantum Espresso, LAMMPS, Orca, SolidWorks, Abaqus, AutoCAD<br>
-        Other: Proposal writing, project management, experimental design, scientific communication, teamwork, FEA, ML data analysis</p>
-        <h3 class="subtitle is-size-4 mt-6">Education</h3>
-        <p class="is-size-5 mt-4">Binghamton University (SUNY) &mdash; Ph.D. Candidate, Materials Science & Engineering (Exp. 2025, GPA: 3.8)<br>
-        University of West London &mdash; MBA, Oct 2019<br>
-        University of Moratuwa &mdash; BSc in Materials Science & Engineering, First Class Honors, Dec 2018<br>
-        Chartered Management Accountant (UK) &mdash; Passed Finalist, Oct 2016</p>
-      </div>
-    </div>
-    <div class="buttons is-centered mt-5">
-      <a class="button is-primary is-medium" href="/assets/Hashan_Peiris_Resume.pdf" download>
-        <span class="icon">
-          <i class="fas fa-download"></i>
-        </span>
-        <span>Download Full CV (PDF)</span>
-      </a>
     </div>
   </div>
 </section>
