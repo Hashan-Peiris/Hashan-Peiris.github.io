@@ -1,0 +1,37 @@
+name: "Hashan C. Peiris"
+role: "Computational Materials Scientist & Engineer"
+location: "Binghamton, NY"
+email: "peiris.mdhc@gmail.com"
+affiliations:
+  - "Ph.D. Candidate, Materials Science & Engineering, Binghamton University"
+  - "Graduate Research Assistant, Smeu Lab"
+summary:
+  - "Computational materials scientist with experience delivering DFT, AIMD, and machine-learning insights for electrochemistry, catalysis, and reliability challenges."
+  - "Hands-on in manufacturing plant operations, inspection, and quality assurance with API 510 certification experience."
+  - "Comfortable bridging research and industry through proposal writing, mentorship, and interdisciplinary collaboration."
+skills:
+  - label: Programming & Tools
+    items: ["Python", "Bash", "MATLAB", "Git", "LaTeX", "HPC (SLURM)"]
+  - label: Simulation & Modeling
+    items: ["VASP", "Quantum Espresso", "LAMMPS", "DeePMD", "USPEX", "Orca", "Abaqus", "SolidWorks"]
+  - label: Other
+    items: ["Proposal writing", "Project management", "FEA", "Scientific communication", "ML model development"]
+education:
+  - institution: "Binghamton University (SUNY)"
+    credential: "Ph.D. Candidate, Materials Science & Engineering"
+    timeline: "Expected 2025"
+    details: "GPA 3.8; research on electrochemical interfaces and degradation mechanisms."
+  - institution: "University of West London"
+    credential: "MBA"
+    timeline: "2019"
+  - institution: "University of Moratuwa"
+    credential: "B.Sc. Materials Science & Engineering"
+    timeline: "2018"
+    details: "First Class Honors"
+  - institution: "Chartered Management Accountant (UK)"
+    credential: "Passed Finalist"
+    timeline: "2016"
+resume:
+  label: "Download Full CV (PDF)"
+  url: "/assets/Hashan_Peiris_Resume.pdf"
+headshot: "/assets/images/Hashan-Peiris.jpg"
