@@ -1,63 +1,17 @@
-<div class="field is-grouped is-grouped-multiline is-justify-content-center mb-5">
-  <div class="control">
-    <div class="select">
-      <select id="project-category">
-        <option value="all">All categories</option>
-        {% assign all_categories = site.data.projects | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
-        {% for category in all_categories %}
-          <option value="{{ category }}">{{ category }}</option>
-        {% endfor %}
-      </select>
-    </div>
-  </div>
-  <div class="control is-expanded">
-    <input id="project-search" class="input" type="search" placeholder="Search projects by name or description" aria-label="Search projects">
-  </div>
-</div>
-
-<div class="columns is-centered is-multiline is-mobile" id="project-grid">
+<div class="columns is-centered is-multiline is-mobile">
   {% for project in site.data.projects %}
     <div class="column has-text-centered is-paddingless is-marginless is-one-third-widescreen is-one-third-desktop is-one-fifth-fullhd is-one-third-tablet is-two-fifths-mobile is-three-quarters-touch"
-      data-name="{{ project.name | downcase }}"
-      data-description="{{ project.description | downcase }}"
-      data-categories="{{ project.categories | join: ',' }}">
-      <a href="{{ project.link | default: '#' }}" {% if project.link %}target="_blank" rel="noopener"{% endif %}>
+      id="project-card">
+      <a href="{{project.link}}" target="_blank">
       <div class="has-background-black card">
         <figure class="image is-3by1" style="background-image: url({{project.image}});">
         </figure>
         <div class="card-content">
           <h1 class="title has-text-white is-size-4">{{ project.name }}</h1>
-          <div class="tags is-justify-content-center mb-2">
-            {% for category in project.categories %}
-              <span class="tag is-light is-size-7">{{ category }}</span>
-            {% endfor %}
-          </div>
-          <p class="has-text-white has-text-weight-light content">{{ project.description | truncate: 120}}</p>
+          <p class="has-text-white has-text-weight-light content">{{ project.description | truncate: 80}}</p>
         </div>
       </div>
       </a>
     </div>
   {% endfor %}
 </div>
-
-<script>
-  const projectSearch = document.getElementById('project-search');
-  const projectCategory = document.getElementById('project-category');
-  const projectCards = document.querySelectorAll('#project-grid [data-name]');
-
-  function filterProjects() {
-    const query = projectSearch.value.toLowerCase();
-    const category = projectCategory.value;
-    projectCards.forEach(card => {
-      const matchesQuery = card.dataset.name.includes(query) || card.dataset.description.includes(query);
-      const categories = card.dataset.categories.split(',');
-      const matchesCategory = category === 'all' || categories.includes(category);
-      card.style.display = (matchesQuery && matchesCategory) ? '' : 'none';
-    });
-  }
-
-  if (projectSearch && projectCategory) {
-    projectSearch.addEventListener('input', filterProjects);
-    projectCategory.addEventListener('change', filterProjects);
-  }
-</script>
