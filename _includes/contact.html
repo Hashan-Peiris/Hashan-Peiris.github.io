@@ -1,63 +1,105 @@
-<section class="hero is-fullheight has-text-centered" id="contact">
-    <div class="hero-body">
-        <div class="container">
-            {% unless site.facebook_username == %}
-            <a id="contact-button" href="https://m.me/{{site.facebook_username}}"
-                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
-                target="_blank">
-                <i class="fab fa-facebook-messenger"></i>Ping me on Messenger
+<section class="section" id="contact">
+  <div class="container">
+    <h2 class="title is-size-3 section-title has-text-centered">Contact</h2>
+
+    <div class="columns is-centered">
+      <div class="column is-10-tablet is-8-desktop">
+        <div class="box is-static has-text-centered">
+          <div class="buttons is-centered">
+            {% if site.email != blank %}
+            <a href="mailto:{{ site.email }}" class="button is-primary is-medium is-rounded contact-button">
+              <span class="icon">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </span>
+              <span>Email</span>
             </a>
-            {% endunless %}
-            {% unless site.email == %}
-            <a id="contact-button" href="mailto:{{site.email}}"
-                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
-                target="_blank">
-                <i class="fas fa-envelope"></i>Send me an Email
+            {% endif %}
+
+            {% if site.linkedin_username != blank %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" class="button is-link is-medium is-rounded contact-button" target="_blank" rel="noopener noreferrer">
+              <span class="icon">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </span>
+              <span>LinkedIn</span>
             </a>
-            {% endunless %}
-            {% unless site.twitter_username == %}
-            <a id="contact-button" href="https://www.twitter.com/intent/tweet?screen_name={{site.twitter_username}}"
-                class="button is-rounded is-uppercase has-text-weight-normal is-black is-outlined has-text-weight-semibold column is-two-fifths"
-                target="_blank">
-                <i class="fab fa-twitter"></i>Tweet me on Twitter
+            {% endif %}
+
+            {% if site.github_username != blank %}
+            <a href="https://github.com/{{ site.github_username }}" class="button is-dark is-medium is-rounded contact-button" target="_blank" rel="noopener noreferrer">
+              <span class="icon">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </span>
+              <span>GitHub</span>
             </a>
-            {% endunless %}
-            <hr>
-            <h3 class="is-size-5 is-uppercase has-text-weight-semibold has-text-black is-marginless">
-                You Can find me here
-            </h3>
-            <div class="column is-full is-size-3">
-                {% unless site.facebook_username == %}
-                <a href="http://www.facebook.com/{{site.facebook_username}}" target="_blank" class="has-text-black"><i class="fab fa-facebook"></i></a>
-                {% endunless %}
-                {% unless site.twitter_username == %}
-                <a href="https://twitter.com/intent/user?screen_name={{site.twitter_username}}" target="_blank" class="has-text-black"><i class="fab fa-twitter"></i></a>
-                {% endunless %}
-                {% unless site.instagram_username ==  %}
-                <a href="http://www.instagram.com/{{site.instagram_username}}" target="_blank" class="has-text-black"><i class="fab fa-instagram"></i></a>
-                {% endunless %}
-                {% unless site.linkedin_username ==  %}
-                <a href="http://www.linkedin.com/in/{{site.linkedin_username}}" target="_blank" class="has-text-black"><i class="fab fa-linkedin"></i></a>
-                {% endunless %}
-                {% unless site.github_username ==  %}
-                <a href="http://www.github.com/{{site.github_username}}" target="_blank" class="has-text-black"><i class="fab fa-github"></i></a>
-                {% endunless %}
-                {% unless site.youtube_channel_id ==  %}
-                <a href="http://www.youtube.com/channel/{{site.youtube_channel_id}}" target="_blank" class="has-text-black"><i class="fab fa-youtube"></i></a>
-                {% endunless %}
-                {% unless site.reddit_username ==  %}
-                <a href="http://www.reddit.com/u/{{site.reddit_username}}" target="_blank" class="has-text-black"><i class="fab fa-reddit"></i></a>
-                {% endunless %}
-                {% unless site.behance_username ==  %}
-                <a href="http://www.behance.com/{{site.behance_username}}" target="_blank" class="has-text-black"><i class="fab fa-behance"></i></a>
-                {% endunless %}
-                {% unless site.dribbble_username ==  %}
-                <a href="http://www.dribbble.com/{{site.dribbble_username}}" target="_blank" class="has-text-black"><i class="fab fa-dribbble"></i></a>
-                {% endunless %}
-                {% unless site.spotify_username ==  %}
-                <a href="http://open.spotify.com/user/{{site.spotify_username}}" target="_blank" class="has-text-black"><i class="fab fa-spotify"></i></a>
-                {% endunless %}
-            </div>
+            {% endif %}
+          </div>
+
+          <hr class="has-background-grey-lighter">
+          <p class="has-text-grey mb-3">You can also find me here</p>
+
+          <div class="social-links is-size-3">
+            {% if site.facebook_username != blank %}
+            <a href="https://www.facebook.com/{{ site.facebook_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="Facebook">
+              <i class="fab fa-facebook" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.twitter_username != blank %}
+            <a href="https://twitter.com/intent/user?screen_name={{ site.twitter_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.instagram_username != blank %}
+            <a href="https://www.instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="Instagram">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.linkedin_username != blank %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="LinkedIn">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.github_username != blank %}
+            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.youtube_channel_id != blank %}
+            <a href="https://www.youtube.com/channel/{{ site.youtube_channel_id }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="YouTube">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.reddit_username != blank %}
+            <a href="https://www.reddit.com/u/{{ site.reddit_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="Reddit">
+              <i class="fab fa-reddit" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.behance_username != blank %}
+            <a href="https://www.behance.com/{{ site.behance_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="Behance">
+              <i class="fab fa-behance" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.dribbble_username != blank %}
+            <a href="https://www.dribbble.com/{{ site.dribbble_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="Dribbble">
+              <i class="fab fa-dribbble" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+
+            {% if site.spotify_username != blank %}
+            <a href="https://open.spotify.com/user/{{ site.spotify_username }}" target="_blank" rel="noopener noreferrer" class="has-text-black" aria-label="Spotify">
+              <i class="fab fa-spotify" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>

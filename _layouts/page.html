@@ -8,21 +8,21 @@ layout: compress
 
 <body>
     {% include navbar.html %}
-    <section class="hero is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered" id="page-section">
-                <div class="section">
-                    <h1 class="title is-1 is-uppercase has-text-weight-bold">
+    <main class="section" id="page-section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-tablet is-8-desktop">
+                    <h1 class="title is-1 is-uppercase has-text-weight-bold has-text-centered">
                         {{page.title}}
                     </h1>
                     <hr class="has-background-black">
-                    <div class="content is-marginless">
+                    <div class="content prose">
                         {{ content }}
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
     <!--Footer begins here-->
     {% include footer.html %}
 </body>
