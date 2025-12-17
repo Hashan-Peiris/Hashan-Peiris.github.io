@@ -1,0 +1,46 @@
+PS H:\Hashan Website\Hashan-Peiris.github.io> bundle install
+Bundle complete! 6 Gemfile dependencies, 50 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+PS H:\Hashan Website\Hashan-Peiris.github.io> bundle exec jekyll serve --livereload --force_polling
+Configuration file: H:/Hashan Website/Hashan-Peiris.github.io/_config.yml
+            Source: H:/Hashan Website/Hashan-Peiris.github.io
+       Destination: H:/Hashan Website/Hashan-Peiris.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+       Jekyll Feed: Generating feed for posts
+Deprecation Warning [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+1 │ @import "main.scss";
+  │         ^^^^^^^^^^^
+  ╵
+    H:\Hashan Website\Hashan-Peiris.github.io\assets\css\style.scss 1:9  root stylesheet
+                    done in 0.517 seconds.
+ Auto-regeneration: enabled for 'H:/Hashan Website/Hashan-Peiris.github.io'
+C:/Ruby34-x64/lib/ruby/3.4.0/win32/registry.rb:2: warning: fiddle/import is found in fiddle, which will no longer be part of the default gems starting from Ruby 3.5.0.
+You can add fiddle to your Gemfile or gemspec to silence this warning.
+LiveReload address: http://127.0.0.1:35729
+                    ------------------------------------------------
+      Jekyll 4.4.1   Please append `--trace` to the `serve` command
+                     for any additional information or backtrace.
+                    ------------------------------------------------
+C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-admin-0.11.1/lib/jekyll/commands/serve.rb:23:in 'Jekyll::Commands::Serve.jekyll_admin_monkey_patch': uninitialized constant Rack::Handler (NameError)
+
+          @server.mount "/admin", Rack::Handler::WEBrick, JekyllAdmin::StaticServer
+                                      ^^^^^^^^^
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-admin-0.11.1/lib/jekyll/commands/serve.rb:15:in 'Jekyll::Commands::Serve.start_up_webrick'       
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/serve.rb:102:in 'Jekyll::Commands::Serve.process'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'block in Jekyll::Command.process_with_graceful_fail'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'Array#each'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-4.4.1/lib/jekyll/command.rb:91:in 'Jekyll::Command.process_with_graceful_fail'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-4.4.1/lib/jekyll/commands/serve.rb:85:in 'block (2 levels) in Jekyll::Commands::Serve.init_with_program'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'block in Mercenary::Command#execute'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'Array#each'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in 'Mercenary::Command#execute'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/mercenary-0.4.0/lib/mercenary/program.rb:44:in 'Mercenary::Program#go'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/mercenary-0.4.0/lib/mercenary.rb:21:in 'Mercenary.program'
+        from C:/Users/Krokko/.local/share/gem/ruby/3.4.0/gems/jekyll-4.4.1/exe/jekyll:15:in '<top (required)>'
+        from C:/Users/Krokko/AppData/Local/Microsoft/WindowsApps/jekyll:25:in 'Kernel#load'
+        from C:/Users/Krokko/AppData/Local/Microsoft/WindowsApps/jekyll:25:in '<main>'
