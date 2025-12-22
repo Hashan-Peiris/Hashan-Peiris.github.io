@@ -1,12 +1,12 @@
 <div class="navbar-item has-dropdown is-hoverable">
-    <a class="navbar-link">
+    <a class="navbar-link" style="color: #e0e0e0;">
         MORE
     </a>
-    <div class="navbar-dropdown has-background-black is-left">
+    <div class="navbar-dropdown is-left" style="background-color: #1a1a1a; border: 1px solid #333333;">
         {% for sitepage in site.html_pages %}
         {% unless sitepage.url == '/' or sitepage.url == '/404'  or sitepage.url == '/blog' %}
         <a href="{{ sitepage.url | relative_url }}"
-            class="navbar-item has-text-grey-light {% if page.url == sitepage.url %}is-active{% endif %}">
+            class="navbar-item" style="color: #e0e0e0;" {% if page.url == sitepage.url %}style="color: #4a9eff; font-weight: 700;"{% endif %}>
             {{sitepage.title}}
         </a>
         {% endunless %}
