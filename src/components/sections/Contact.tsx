@@ -68,7 +68,7 @@ export function Contact() {
           </Card>
 
           <p className="mt-8 text-sm text-muted-foreground">
-            References will be provided upon request.
+            Happy to provide references upon request.
           </p>
         </div>
       </div>

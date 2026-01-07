@@ -3,7 +3,7 @@ export const profile = {
   name: "Hashan C. Peiris",
   title: "Computational Materials Scientist & Engineer",
   tagline:
-    "Advanced research and industrial experience in computational materials science, catalysis, battery interfaces, failure analysis, and manufacturing.",
+    "Advanced research and industrial experience in computational materials science,  battery interfaces, failure analysis, catalysis, and manufacturing.",
   email: "peiris.mdhc@gmail.com",
   linkedin: "https://www.linkedin.com/in/m-d-hashan-c-peiris-aa9b65146",
   github: "https://github.com/Hashan-Peiris",

@@ -12,7 +12,7 @@ export function About() {
             About Me
           </h2>
 
-          <p className="text-lg text-muted-foreground leading-relaxed mb-12 text-center">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-12 text-justify">
             {profile.bio}
           </p>
 
