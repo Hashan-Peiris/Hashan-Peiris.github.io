@@ -1,42 +1,73 @@
-# Hashan-Peiris.github.io
+# Welcome to your Lovable project
 
-A Jekyll-powered personal site for showcasing research, industry projects, publications, and writing.
+## Project info
 
-## Local development
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-1. Install Ruby (3.1+ recommended) and Bundler.
-2. Install dependencies:
+## How can I edit this code?
 
-   ```bash
-   bundle install
-   ```
+There are several ways of editing your application.
 
-3. Run the site locally with live reload:
+**Use Lovable**
 
-   ```bash
-   bundle exec jekyll serve --livereload
-   ```
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-4. Build the production output (useful for CI parity):
+Changes made via Lovable will be committed automatically to this repo.
 
-   ```bash
-   bundle exec jekyll build --trace
-   ```
+**Use your preferred IDE**
 
-The generated site is output to `_site/`.
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-## Content model
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-- **Publications:** `_data/publications.yml` drives `/publications`, including tags, links, and BibTeX snippets per entry.
-- **Projects:** `_data/projects.yml` drives `/project`, with category filters and search. Each project can link to an external page, repo, or PDF.
-- **Posts:** Standard Jekyll posts live in `_posts/`.
+Follow these steps:
 
-Update data files to add or edit items; the layouts handle presentation.
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-## Continuous integration
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-GitHub Actions builds the site on every push and pull request to ensure the Jekyll build stays healthy. See `.github/workflows/jekyll-build.yml`.
+# Step 3: Install the necessary dependencies.
+npm i
 
-## Spec
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
 
-The working plan for maintaining and extending the site is documented in `SPEC.md`. Keep it updated when workflows or content models change.
+**Edit a file directly in GitHub**
+
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
+
+**Use GitHub Codespaces**
+
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
