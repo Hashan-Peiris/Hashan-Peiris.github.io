@@ -3,6 +3,11 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Briefcase, Code } from "lucide-react";
 
+const italicizeAbInitio = (text: string) =>
+  text.split(/(ab initio)/gi).map((part, index) =>
+    part.toLowerCase() === "ab initio" ? <em key={`ab-initio-${index}`}>{part}</em> : part,
+  );
+
 export function About() {
   return (
     <section id="about" className="py-20 bg-card">
@@ -13,7 +18,7 @@ export function About() {
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-12 text-justify">
-            {profile.bio}
+            {italicizeAbInitio(profile.bio)}
           </p>
 
           {/* Skills */}

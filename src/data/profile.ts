@@ -7,7 +7,7 @@ export const profile = {
   email: "peiris.mdhc@gmail.com",
   linkedin: "https://www.linkedin.com/in/m-d-hashan-c-peiris-aa9b65146",
   github: "https://github.com/Hashan-Peiris",
-  orcid: "https://orcid.org/0000-0000-0000-0000", // Update with your ORCID
+  orcid: "https://orcid.org/0000-0002-8706-452X", // Update with your ORCID
   cvUrl: "/assets/Hashan_Peiris_Resume.pdf",
   photo: "/assets/images/Hashan-Peiris.jpg",
 
