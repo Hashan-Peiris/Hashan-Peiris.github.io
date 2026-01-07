@@ -9,7 +9,7 @@ export const profile = {
   github: "https://github.com/Hashan-Peiris",
   orcid: "https://orcid.org/0000-0000-0000-0000", // Update with your ORCID
   cvUrl: "/assets/Hashan_Peiris_Resume.pdf",
-  photo: "https://hashan-peiris.github.io/assets/images/Hashan-Peiris.jpg",
+  photo: "/assets/images/Hashan-Peiris.jpg",
 
   bio: `Computational materials scientist and engineer with a proven track record of delivering impactful solutions to complex challenges at the intersection of research and industry. Expertise in advanced modeling techniques, including Density Functional Theory (DFT), Ab Initio Molecular Dynamics (AIMD), and Machine Learning (ML). Extensive hands-on experience in manufacturing plant operations, system inspection, quality assurance, and failure analysis.
 
