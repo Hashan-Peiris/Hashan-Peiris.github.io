@@ -11,6 +11,13 @@ export interface Publication {
   pdf?: string;
   bibtex?: string;
   status?: "published" | "in-prep" | "submitted";
+  figure?: PublicationFigure;
+}
+
+export interface PublicationFigure {
+  src: string;
+  alt: string;
+  caption?: string;
 }
 
 export const publications: Publication[] = [
@@ -24,6 +31,11 @@ export const publications: Publication[] = [
     url: "https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(24)00308-4",
     doi: "10.1016/j.xcrp.2024.102002",
     status: "published",
+    figure: {
+      src: "/assets/papers/cell-reports-2024.svg",
+      alt: "Cathode surface and electrolyte interaction schematic thumbnail",
+      caption: "Figure highlight: NMC cathode surface and oxygen state evolution",
+    },
     bibtex: `@article{peiris2024electrolyte,
   title={Electrolyte reactivity, oxygen states, and degradation mechanisms of nickel-rich cathodes},
   author={Peiris, Hashan C and Smeu, Manuel},
@@ -40,6 +52,11 @@ export const publications: Publication[] = [
     tags: ["DFT", "AIMD", "Battery", "Electrolyte"],
     url: "https://www.sciencedirect.com/science/article/abs/pii/S0927775723009159",
     status: "published",
+    figure: {
+      src: "/assets/papers/colloids-2023.svg",
+      alt: "Solvation structure snapshot thumbnail",
+      caption: "Figure highlight: LiBF4 and LiPF6 solvation shell structures",
+    },
     bibtex: `@article{peiris2023solvation,
   title={Computational determination of the solvation structure of LiBF4 and LiPF6 salts in battery electrolytes},
   author={Peiris, Hashan C and Smeu, Manuel},
@@ -55,7 +72,12 @@ export const publications: Publication[] = [
     year: 2025,
     tags: ["DFT", "Polymer", "ALD"],
     url: "https://pubs.acs.org/doi/abs/10.1021/acsami.4c14135",
-    status: "published"
+    status: "published",
+    figure: {
+      src: "/assets/papers/acs-ami-2025.svg",
+      alt: "PVDF and TMA reaction pathway thumbnail",
+      caption: "Figure highlight: PVDF and TMA reaction pathway overview",
+    }
   },
   {
     id: "engineer-2019",
@@ -65,7 +87,12 @@ export const publications: Publication[] = [
     year: 2019,
     tags: ["Corrosion", "Steel", "Failure Analysis"],
     url: "https://engineer.sljol.info/articles/10.4038/engineer.v53i2.7408",
-    status: "published"
+    status: "published",
+    figure: {
+      src: "/assets/papers/engineer-2019.svg",
+      alt: "Pipeline corrosion and stress analysis thumbnail",
+      caption: "Figure highlight: Stress corrosion map for API 5L steel",
+    }
   },
   {
     id: "n2o-jacs-2025",
@@ -74,7 +101,12 @@ export const publications: Publication[] = [
     journal: "Journal of the American Chemical Society",
     year: 2025,
     tags: ["DFT", "Catalysis", "Electrocatalyst"],
-    status: "submitted"
+    status: "submitted",
+    figure: {
+      src: "/assets/papers/n2o-jacs-2025.svg",
+      alt: "Electrocatalyst active site schematic thumbnail",
+      caption: "Figure highlight: Cu(II) active site and N2O reduction pathway",
+    }
   },
   {
     id: "solder-ieec-2022",
@@ -83,7 +115,12 @@ export const publications: Publication[] = [
     journal: "IEEC Conference Proceedings",
     year: 2022,
     tags: ["DFT", "ML", "Solder"],
-    status: "published"
+    status: "published",
+    figure: {
+      src: "/assets/papers/solder-ieec-2022.svg",
+      alt: "Thermo-mechanical response chart thumbnail",
+      caption: "Figure highlight: Sn-based solder alloy stress-strain response",
+    }
   }
 ];
 
