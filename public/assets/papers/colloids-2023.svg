@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <rect width="640" height="480" fill="#F1F8F7"/>
+  <rect x="24" y="24" width="592" height="432" rx="24" fill="#FFFFFF" stroke="#CFDED9"/>
+  <g opacity="0.5">
+    <circle cx="190" cy="170" r="50" fill="#D6F0ED"/>
+    <circle cx="270" cy="230" r="28" fill="#BEE4DF"/>
+    <circle cx="350" cy="150" r="32" fill="#E4F6F3"/>
+    <circle cx="450" cy="220" r="26" fill="#C9ECE8"/>
+  </g>
+  <path d="M120 310C172 292 210 250 262 240C314 230 356 258 408 236C460 214 500 230 528 208" stroke="#38A7A0" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#38A7A0">
+    <circle cx="120" cy="310" r="4"/>
+    <circle cx="210" cy="250" r="4"/>
+    <circle cx="262" cy="240" r="4"/>
+    <circle cx="356" cy="258" r="4"/>
+    <circle cx="408" cy="236" r="4"/>
+    <circle cx="500" cy="230" r="4"/>
+    <circle cx="528" cy="208" r="4"/>
+  </g>
+  <g opacity="0.35">
+    <path d="M100 110H540" stroke="#B7D0CB" stroke-width="1" stroke-dasharray="4 8"/>
+    <path d="M100 200H540" stroke="#B7D0CB" stroke-width="1" stroke-dasharray="4 8"/>
+    <path d="M100 290H540" stroke="#B7D0CB" stroke-width="1" stroke-dasharray="4 8"/>
+  </g>
+</svg>

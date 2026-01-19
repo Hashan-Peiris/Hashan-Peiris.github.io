@@ -5,29 +5,47 @@ import { ArrowDown, Download, Mail, Linkedin, Github } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import profilePlaceholder from "@/assets/profile-placeholder.jpg";
 
-export function Hero() {
+interface HeroProps {
+  onNavigateToResearch?: () => void;
+}
+
+export function Hero({ onNavigateToResearch }: HeroProps) {
   const [imageError, setImageError] = useState(false);
 
   const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    onNavigateToResearch?.();
+    requestAnimationFrame(() => {
+      document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+    });
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img 
-          src={heroBg} 
-          alt="" 
-          className="w-full h-full object-cover opacity-20"
+        <img
+          src={heroBg}
+          alt=""
+          className="w-full h-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/80" />
+        <div className="absolute inset-0 material-lattice" />
+        <div className="absolute inset-0 material-orbits" />
+        <div className="absolute inset-0 material-diffraction" />
+        <div className="absolute inset-0 material-grain" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/90 to-background/75" />
       </div>
       
       {/* Animated background shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/50 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        <div
+          className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/50 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-20 left-1/3 w-72 h-72 bg-secondary/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
       <div className="container relative z-10 px-4 py-20">

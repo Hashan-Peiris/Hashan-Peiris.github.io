@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { publications, allTags, type Publication } from "@/data/publications";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -87,83 +87,107 @@ export function Publications() {
           <div className="space-y-4">
             {filteredPublications.map((pub) => (
               <Card key={pub.id} className="bg-background hover:shadow-md transition-shadow">
-                <CardHeader className="pb-2">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-start gap-3">
-                      <div className="p-2 bg-primary/10 rounded-lg shrink-0">
-                        <BookOpen className="h-4 w-4 text-primary" />
+                <div className="grid gap-5 p-6 md:grid-cols-[160px_1fr]">
+                  <div className="group relative aspect-[4/3] overflow-hidden rounded-lg border bg-muted/30">
+                    {pub.figure ? (
+                      <img
+                        src={pub.figure.src}
+                        alt={pub.figure.alt}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center gap-2 text-muted-foreground">
+                        <BookOpen className="h-4 w-4" />
+                        <span className="text-xs uppercase tracking-wide">Figure Preview</span>
                       </div>
-                      <div>
-                        <CardTitle className="text-base font-medium leading-snug">
-                          {pub.title}
-                        </CardTitle>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {pub.authors}
-                        </p>
+                    )}
+                    {pub.figure?.caption && (
+                      <div className="absolute inset-x-0 bottom-0 bg-background/85 px-3 py-2 text-[11px] text-muted-foreground backdrop-blur">
+                        {pub.figure.caption}
                       </div>
+                    )}
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 bg-primary/10 rounded-lg shrink-0">
+                          <BookOpen className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-base font-medium leading-snug">
+                            {pub.title}
+                          </CardTitle>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {pub.authors}
+                          </p>
+                        </div>
+                      </div>
+                      <Badge className="shrink-0">{pub.year}</Badge>
                     </div>
-                    <Badge className="shrink-0">{pub.year}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className="text-sm font-medium text-foreground">
-                      {pub.journal}
-                    </span>
-                    {pub.status && (
-                      <Badge variant="outline" className={statusColors[pub.status]}>
-                        {pub.status === "in-prep" ? "In Preparation" : pub.status.charAt(0).toUpperCase() + pub.status.slice(1)}
-                      </Badge>
-                    )}
-                  </div>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {pub.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-sm font-medium text-foreground">
+                        {pub.journal}
+                      </span>
+                      {pub.status && (
+                        <Badge variant="outline" className={statusColors[pub.status]}>
+                          {pub.status === "in-prep"
+                            ? "In Preparation"
+                            : pub.status.charAt(0).toUpperCase() + pub.status.slice(1)}
+                        </Badge>
+                      )}
+                    </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {pub.url && (
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={pub.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-3 w-3 mr-1" />
-                          View
-                        </a>
-                      </Button>
-                    )}
-                    {pub.pdf && (
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={pub.pdf} target="_blank" rel="noopener noreferrer">
-                          <FileText className="h-3 w-3 mr-1" />
-                          PDF
-                        </a>
-                      </Button>
-                    )}
-                    {pub.bibtex && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => copyBibtex(pub)}
-                      >
-                        {copiedId === pub.id ? (
-                          <Check className="h-3 w-3 mr-1" />
-                        ) : (
-                          <Copy className="h-3 w-3 mr-1" />
-                        )}
-                        BibTeX
-                      </Button>
+                    <div className="flex flex-wrap gap-2">
+                      {pub.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {pub.url && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={pub.url} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-3 w-3 mr-1" />
+                            View
+                          </a>
+                        </Button>
+                      )}
+                      {pub.pdf && (
+                        <Button variant="outline" size="sm" asChild>
+                          <a href={pub.pdf} target="_blank" rel="noopener noreferrer">
+                            <FileText className="h-3 w-3 mr-1" />
+                            PDF
+                          </a>
+                        </Button>
+                      )}
+                      {pub.bibtex && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => copyBibtex(pub)}
+                        >
+                          {copiedId === pub.id ? (
+                            <Check className="h-3 w-3 mr-1" />
+                          ) : (
+                            <Copy className="h-3 w-3 mr-1" />
+                          )}
+                          BibTeX
+                        </Button>
+                      )}
+                    </div>
+
+                    {expandedBibtex === pub.id && pub.bibtex && (
+                      <pre className="mt-4 p-4 bg-muted rounded-lg text-xs overflow-x-auto">
+                        {pub.bibtex}
+                      </pre>
                     )}
                   </div>
-
-                  {expandedBibtex === pub.id && pub.bibtex && (
-                    <pre className="mt-4 p-4 bg-muted rounded-lg text-xs overflow-x-auto">
-                      {pub.bibtex}
-                    </pre>
-                  )}
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>

@@ -12,7 +12,11 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-export function Navigation() {
+interface NavigationProps {
+  onNavigateToResearch?: () => void;
+}
+
+export function Navigation({ onNavigateToResearch }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,11 +30,14 @@ export function Navigation() {
   }, []);
 
   const scrollToSection = (href: string) => {
+    onNavigateToResearch?.();
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    requestAnimationFrame(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   };
 
   return (
