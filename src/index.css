@@ -1,151 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Hashan Peiris Portfolio - Materials Science Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
-    --foreground: 0 0% 9%;
+    /* Core palette - Deep navy/slate with warm gold accent */
+    --background: 222 25% 6%;
+    --foreground: 210 20% 95%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 9%;
+    --card: 222 20% 10%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 0 0% 89%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 222 20% 12%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 243 75% 58%;
-    --primary-foreground: 225 100% 96%;
+    /* Gold/amber accent for materials science feel */
+    --primary: 38 75% 55%;
+    --primary-foreground: 222 25% 6%;
 
-    --secondary: 0 0% 32%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 222 15% 18%;
+    --secondary-foreground: 210 20% 90%;
 
-    --muted: 0 0% 63%;
-    --muted-foreground: 0 0% 9%;
+    --muted: 222 15% 15%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 250 100% 97%;
-    --accent-foreground: 258 89% 66%;
-
-    --destructive: 0 72% 50%;
-    --destructive-foreground: 0 85% 97%;
-
-    --border: 0 0% 83%;
-    --input: 0 0% 83%;
-    --ring: 243 75% 58%;
-
-    --radius: 1.25rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 0 0% 9%;
-
-    --sidebar-primary: 243 75% 58%;
-
-    --sidebar-primary-foreground: 225 100% 96%;
-
-    --sidebar-accent: 0 0% 32%;
-
-    --sidebar-accent-foreground: 0 0% 98%;
-
-    --sidebar-border: 0 0% 83%;
-
-    --sidebar-ring: 243 75% 58%;
-
-    --chart-1: 234 89% 73%;
-
-    --chart-2: 255 91% 76%;
-
-    --chart-3: 270 95% 75%;
-
-    --chart-4: 238 83% 66%;
-
-    --chart-5: 0 0% 45%;
-
-    --sidebar: 0 0% 98%;
-
-    --font-sans: 'Lato', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-
-    --font-serif: 'EB Garamond', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
-
-    --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-
-    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-
-    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-
-    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-
-    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-
-    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
-
-    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-
-    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-
-    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
-
-    --tracking-normal: 0em;
-
-    --spacing: 0.25rem;
-  }
-
-  .dark {
-    --background: 0 0% 9%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 14%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 25%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 234 89% 73%;
-    --primary-foreground: 243 47% 20%;
-
-    --secondary: 0 0% 45%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 45%;
-    --muted-foreground: 0 0% 98%;
-
-    --accent: 261 72% 22%;
-    --accent-foreground: 255 91% 76%;
+    --accent: 200 70% 50%;
+    --accent-foreground: 222 25% 6%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 85% 97%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 32%;
-    --input: 0 0% 32%;
-    --ring: 234 89% 73%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 234 89% 73%;
-    --sidebar-primary-foreground: 243 47% 20%;
-    --sidebar-accent: 255 91% 76%;
-    --sidebar-accent-foreground: 261 72% 22%;
-    --sidebar-border: 0 0% 32%;
-    --sidebar-ring: 234 89% 73%;
-    --chart-1: 229 93% 81%;
-    --chart-2: 252 94% 85%;
-    --chart-3: 269 97% 85%;
-    --chart-4: 234 89% 73%;
-    --chart-5: 0 0% 45%;
-    --sidebar: 0 0% 14%;
-    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
-    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --border: 222 15% 20%;
+    --input: 222 15% 20%;
+    --ring: 38 75% 55%;
+
+    --radius: 0.5rem;
+
+    /* Hero gradient */
+    --hero-gradient: linear-gradient(135deg, 
+      hsl(222 25% 8%) 0%, 
+      hsl(220 30% 12%) 50%, 
+      hsl(222 25% 6%) 100%);
+
+    /* Materials science colors */
+    --crystal-blue: 200 80% 60%;
+    --crystal-purple: 260 60% 55%;
+    --lattice-gold: 38 80% 50%;
+    --atom-cyan: 180 70% 45%;
   }
 }
 
@@ -154,98 +59,285 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
   }
 }
 
-@layer utilities {
-  .material-lattice {
-    position: absolute;
-    inset: -30%;
-    background-image:
-      radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.18) 1.2px, transparent 1.4px),
-      radial-gradient(circle at 1px 1px, hsl(var(--accent) / 0.16) 1px, transparent 1.3px);
-    background-size: 46px 46px, 72px 72px;
-    opacity: 0.45;
-    transform: rotate(-12deg);
-    animation: material-drift 32s linear infinite;
+/* Animated Materials Science Background */
+@layer components {
+  .materials-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
   }
 
-  .material-orbits {
-    position: absolute;
-    inset: -20%;
-    background-image:
-      repeating-linear-gradient(60deg, hsl(var(--foreground) / 0.06) 0 1px, transparent 1px 28px),
-      repeating-linear-gradient(-60deg, hsl(var(--foreground) / 0.06) 0 1px, transparent 1px 28px),
-      repeating-linear-gradient(0deg, hsl(var(--primary) / 0.05) 0 1px, transparent 1px 36px);
-    opacity: 0.4;
-    animation: material-shift 28s linear infinite;
-  }
-
-  .material-diffraction {
-    position: absolute;
-    inset: -10%;
-    background-image:
-      radial-gradient(circle at 20% 30%, transparent 0 52%, hsl(var(--primary) / 0.15) 53% 54%, transparent 55% 100%),
-      radial-gradient(circle at 80% 70%, transparent 0 46%, hsl(var(--accent) / 0.2) 47% 48%, transparent 49% 100%),
-      radial-gradient(circle at 60% 20%, transparent 0 40%, hsl(var(--secondary) / 0.1) 41% 42%, transparent 43% 100%);
-    opacity: 0.35;
-    transform-origin: center;
-    animation: material-spin 46s linear infinite;
-  }
-
-  .material-grain {
+  .materials-bg::before {
+    content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
-    background-size: 18px 18px;
-    opacity: 0.2;
-    animation: material-grain 18s ease-in-out infinite alternate;
+    background: var(--hero-gradient);
+  }
+
+  /* Floating crystal lattice nodes */
+  .lattice-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 50%;
+    animation: float-node 20s ease-in-out infinite;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+
+  .lattice-node::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      hsl(var(--primary) / 0.15) 0%, 
+      transparent 100%);
+    transform-origin: left center;
+    animation: rotate-line 30s linear infinite;
+  }
+
+  @keyframes float-node {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+    50% { transform: translateY(-30px) scale(1.2); opacity: 0.7; }
+  }
+
+  @keyframes rotate-line {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Hexagonal pattern overlay */
+  .hex-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d4a439' fill-opacity='0.03'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    animation: drift-pattern 60s linear infinite;
+  }
+
+  @keyframes drift-pattern {
+    from { background-position: 0 0; }
+    to { background-position: 28px 49px; }
+  }
+
+  /* Molecular orbit rings */
+  .orbit-ring {
+    position: absolute;
+    border: 1px solid hsl(var(--crystal-blue) / 0.1);
+    border-radius: 50%;
+    animation: pulse-ring 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.1; }
+  }
+
+  /* Glowing gradient orbs */
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float-orb 25s ease-in-out infinite;
+  }
+
+  @keyframes float-orb {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(50px, -30px) scale(1.1); }
+    66% { transform: translate(-30px, 20px) scale(0.9); }
   }
 }
 
-@keyframes material-drift {
-  from {
-    transform: translate3d(0, 0, 0) rotate(-12deg);
+/* Navigation styles */
+@layer components {
+  .nav-sticky {
+    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+    backdrop-filter: blur(20px);
+    background: hsl(var(--background) / 0.85);
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
   }
-  to {
-    transform: translate3d(-120px, 80px, 0) rotate(-12deg);
+
+  .nav-link {
+    @apply relative px-4 py-2 text-sm font-medium text-muted-foreground transition-colors;
+  }
+
+  .nav-link:hover {
+    @apply text-foreground;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-3/4;
+  }
+
+  .tab-btn {
+    @apply px-6 py-2 text-sm font-semibold rounded-full transition-all duration-300;
+  }
+
+  .tab-btn.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .tab-btn:not(.active) {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
   }
 }
 
-@keyframes material-shift {
-  from {
-    transform: translate3d(0, 0, 0);
+/* Section styles */
+@layer components {
+  .section-container {
+    @apply relative z-10 max-w-6xl mx-auto px-6 py-20;
   }
-  to {
-    transform: translate3d(120px, -90px, 0);
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground mb-12;
+  }
+
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl p-6;
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    @apply bg-card/70 border-primary/30;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.15);
   }
 }
 
-@keyframes material-spin {
-  from {
-    transform: rotate(0deg);
+/* Photo lightbox */
+@layer components {
+  .photo-grid-item {
+    @apply relative overflow-hidden rounded-xl cursor-pointer;
+    aspect-ratio: 1;
   }
-  to {
-    transform: rotate(360deg);
+
+  .photo-grid-item img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+  }
+
+  .photo-grid-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .photo-grid-item::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .photo-grid-item:hover::after {
+    @apply opacity-100;
+  }
+
+  .lightbox-overlay {
+    @apply fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl flex items-center justify-center;
+  }
+
+  .lightbox-image {
+    @apply max-w-[90vw] max-h-[90vh] object-contain rounded-lg;
   }
 }
 
-@keyframes material-grain {
-  from {
-    opacity: 0.16;
+/* Tag/badge styles */
+@layer components {
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground;
   }
-  to {
-    opacity: 0.28;
+
+  .pub-tag {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded bg-primary/20 text-primary;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .material-lattice,
-  .material-orbits,
-  .material-diffraction,
-  .material-grain {
-    animation: none;
+/* Timeline */
+@layer components {
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l border-border/50;
   }
+
+  .timeline-item::before {
+    content: '';
+    @apply absolute left-0 top-0 w-3 h-3 rounded-full bg-primary border-4 border-background;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item:last-child {
+    @apply border-l-transparent;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
 }
