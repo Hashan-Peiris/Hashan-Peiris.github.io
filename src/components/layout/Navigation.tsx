@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { profile } from "@/data/profile";
 import { Button } from "@/components/ui/button";
+import { TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const navItems = [
+const researchNavItems = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Publications", href: "#publications" },
@@ -12,13 +13,19 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
+const personalNavItems = [
+  { label: "Photos", href: "#personal-photos" },
+  { label: "Blogs", href: "#personal-blogs" },
+];
+
 interface NavigationProps {
-  onNavigateToResearch?: () => void;
+  activeTab: "research" | "personal";
 }
 
-export function Navigation({ onNavigateToResearch }: NavigationProps) {
+export function Navigation({ activeTab }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navItems = activeTab === "research" ? researchNavItems : personalNavItems;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,8 +36,11 @@ export function Navigation({ onNavigateToResearch }: NavigationProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [activeTab]);
+
   const scrollToSection = (href: string) => {
-    onNavigateToResearch?.();
     setIsMobileMenuOpen(false);
     requestAnimationFrame(() => {
       const element = document.querySelector(href);
@@ -50,7 +60,7 @@ export function Navigation({ onNavigateToResearch }: NavigationProps) {
       )}
     >
       <nav className="container px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
           <a
             href="#"
@@ -63,8 +73,16 @@ export function Navigation({ onNavigateToResearch }: NavigationProps) {
             {profile.name.split(" ")[0]}
           </a>
 
+          {/* Tabs */}
+          <div className="hidden md:flex flex-1 justify-center">
+            <TabsList className="bg-muted/80">
+              <TabsTrigger value="research">Research</TabsTrigger>
+              <TabsTrigger value="personal">Personal</TabsTrigger>
+            </TabsList>
+          </div>
+
           {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <Button
                 key={item.href}
@@ -82,7 +100,7 @@ export function Navigation({ onNavigateToResearch }: NavigationProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -93,9 +111,16 @@ export function Navigation({ onNavigateToResearch }: NavigationProps) {
           </Button>
         </div>
 
+        <div className="md:hidden pb-4">
+          <TabsList className="w-full justify-center bg-muted/80">
+            <TabsTrigger value="research">Research</TabsTrigger>
+            <TabsTrigger value="personal">Personal</TabsTrigger>
+          </TabsList>
+        </div>
+
         {/* Mobile menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Button

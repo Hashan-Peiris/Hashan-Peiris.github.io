@@ -1,10 +1,14 @@
-import { personalPosts, personalPhotos } from "@/data/personal";
+import { useState } from "react";
+import { personalPosts, personalPhotos, type PersonalPhoto } from "@/data/personal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Calendar, Camera, MapPin, PenLine } from "lucide-react";
 
 export function Personal() {
+  const [activePhoto, setActivePhoto] = useState<PersonalPhoto | null>(null);
+
   return (
     <section id="personal" className="py-20 bg-background">
       <div className="container px-4">
@@ -19,7 +23,7 @@ export function Personal() {
           </div>
 
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="space-y-6">
+            <div className="space-y-6 scroll-mt-24" id="personal-blogs">
               <div className="flex items-center gap-2">
                 <PenLine className="h-5 w-5 text-primary" />
                 <h3 className="text-2xl font-serif font-semibold text-foreground">Field Notes</h3>
@@ -60,7 +64,7 @@ export function Personal() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 scroll-mt-24" id="personal-photos">
               <div className="flex items-center gap-2">
                 <Camera className="h-5 w-5 text-primary" />
                 <h3 className="text-2xl font-serif font-semibold text-foreground">Photo Journal</h3>
@@ -68,9 +72,12 @@ export function Personal() {
 
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
                 {personalPhotos.map((photo) => (
-                  <figure
+                  <button
                     key={photo.id}
-                    className="group overflow-hidden rounded-xl border bg-card shadow-sm"
+                    type="button"
+                    onClick={() => setActivePhoto(photo)}
+                    className="group w-full overflow-hidden rounded-xl border bg-card shadow-sm text-left"
+                    aria-label={`Open photo ${photo.title}`}
                   >
                     <div className="aspect-[4/3] overflow-hidden">
                       <img
@@ -80,7 +87,7 @@ export function Personal() {
                         loading="lazy"
                       />
                     </div>
-                    <figcaption className="space-y-2 p-4">
+                    <div className="space-y-2 p-4">
                       <div className="flex items-start justify-between gap-3">
                         <span className="font-medium text-foreground">{photo.title}</span>
                         <span className="text-xs text-muted-foreground">{photo.date}</span>
@@ -95,14 +102,46 @@ export function Personal() {
                           <span>{photo.camera}</span>
                         </div>
                       )}
-                    </figcaption>
-                  </figure>
+                    </div>
+                  </button>
                 ))}
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <Dialog open={Boolean(activePhoto)} onOpenChange={(open) => !open && setActivePhoto(null)}>
+        <DialogContent className="max-w-5xl p-0 overflow-hidden">
+          {activePhoto && (
+            <div className="bg-background">
+              <div className="bg-black/90">
+                <img
+                  src={activePhoto.image}
+                  alt={activePhoto.title}
+                  className="max-h-[70vh] w-full object-contain"
+                />
+              </div>
+              <div className="space-y-2 p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-lg font-semibold text-foreground">{activePhoto.title}</span>
+                  <span className="text-sm text-muted-foreground">{activePhoto.date}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin className="h-4 w-4" />
+                  <span>{activePhoto.location}</span>
+                </div>
+                {activePhoto.camera && (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Camera className="h-4 w-4" />
+                    <span>{activePhoto.camera}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
