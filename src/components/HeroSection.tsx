@@ -95,8 +95,8 @@ const HeroSection = ({ activeTab, setActiveTab, hasSelectedTab }: HeroSectionPro
           <div className="flex justify-center mt-16 animate-fade-up">
             <div className="text-muted-foreground text-sm flex flex-col items-center gap-2">
               <span>Scroll to explore</span>
-              <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
-                <div className="w-1.5 h-1.5 bg-primary rounded-full animate-bounce" />
+              <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full animate-scroll-bounce mt-1" />
               </div>
             </div>
           </div>
