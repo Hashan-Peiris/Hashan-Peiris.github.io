@@ -8,6 +8,10 @@ const BlogPost = () => {
   const navigate = useNavigate();
   const blog = slug ? getBlogBySlug(slug) : undefined;
 
+  const goBackToBlogs = () => {
+    navigate('/', { state: { tab: 'personal', section: 'blogs' } });
+  };
+
   if (!blog) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -139,11 +143,11 @@ const BlogPost = () => {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <button
-            onClick={() => navigate('/')}
+            onClick={goBackToBlogs}
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ChevronLeft size={16} />
-            Back to home
+            Back to blogs
           </button>
         </div>
       </header>
@@ -181,7 +185,7 @@ const BlogPost = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-border">
           <button
-            onClick={() => navigate('/')}
+            onClick={goBackToBlogs}
             className="flex items-center gap-2 text-primary hover:underline"
           >
             <ChevronLeft size={16} />
