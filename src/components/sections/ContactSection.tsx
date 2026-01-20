@@ -12,7 +12,7 @@ const ContactSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <a
             href="mailto:peiris.mdhc@gmail.com"
-            className="flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all hover:scale-105 w-full sm:w-auto justify-center"
+            className="flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all hover:scale-105 w-full sm:w-auto justify-center whitespace-nowrap"
           >
             <Mail size={18} />
             peiris.mdhc@gmail.com
@@ -22,7 +22,7 @@ const ContactSection = () => {
             href="https://www.linkedin.com/in/m-d-hashan-c-peiris-aa9b65146"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 bg-secondary text-secondary-foreground rounded-full font-medium hover:bg-secondary/80 transition-all hover:scale-105 w-full sm:w-auto justify-center"
+            className="flex items-center gap-3 px-6 py-3 bg-secondary text-secondary-foreground rounded-full font-medium hover:bg-secondary/80 transition-all hover:scale-105 w-full sm:w-auto justify-center whitespace-nowrap"
           >
             <Linkedin size={18} />
             Connect with me
@@ -32,7 +32,7 @@ const ContactSection = () => {
             href="https://github.com/Hashan-Peiris"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-6 py-3 bg-secondary text-secondary-foreground rounded-full font-medium hover:bg-secondary/80 transition-all hover:scale-105 w-full sm:w-auto justify-center"
+            className="flex items-center gap-3 px-6 py-3 bg-secondary text-secondary-foreground rounded-full font-medium hover:bg-secondary/80 transition-all hover:scale-105 w-full sm:w-auto justify-center whitespace-nowrap"
           >
             <Github size={18} />
             View my code
