@@ -50,8 +50,10 @@ const BlogPost = () => {
     };
 
     const renderInlineFormatting = (text: string) => {
-      // Handle bold text
-      const parts = text.split(/(\*\*[^*]+\*\*)/g);
+      // Handle bold text - only processes static content from blogs.ts
+      // Note: If user-generated content is added in future, use react-markdown with DOMPurify
+      const sanitizedText = text.replace(/[<>]/g, ''); // Basic XSS prevention
+      const parts = sanitizedText.split(/(\*\*[^*]+\*\*)/g);
       return parts.map((part, i) => {
         if (part.startsWith('**') && part.endsWith('**')) {
           return <strong key={i} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>;
