@@ -3,9 +3,10 @@ import { Download, Mail, Linkedin, Github } from 'lucide-react';
 interface HeroSectionProps {
   activeTab: 'research' | 'personal';
   setActiveTab: (tab: 'research' | 'personal') => void;
+  hasSelectedTab: boolean;
 }
 
-const HeroSection = ({ activeTab, setActiveTab }: HeroSectionProps) => {
+const HeroSection = ({ activeTab, setActiveTab, hasSelectedTab }: HeroSectionProps) => {
   return (
     <section className="relative z-10 min-h-screen flex items-center pt-20">
       <div className="max-w-6xl mx-auto px-6 w-full">
@@ -89,23 +90,17 @@ const HeroSection = ({ activeTab, setActiveTab }: HeroSectionProps) => {
           </div>
         </div>
 
-        {/* Tab Switcher (visible before scroll) */}
-        <div className="flex justify-center mt-16 animate-fade-up stagger-3">
-          <div className="flex items-center gap-2 p-1.5 bg-secondary/50 rounded-full backdrop-blur-sm">
-            <button
-              onClick={() => setActiveTab('research')}
-              className={`tab-btn ${activeTab === 'research' ? 'active' : ''}`}
-            >
-              Research
-            </button>
-            <button
-              onClick={() => setActiveTab('personal')}
-              className={`tab-btn ${activeTab === 'personal' ? 'active' : ''}`}
-            >
-              Personal
-            </button>
+        {/* Scroll indicator (visible after tab selection) */}
+        {hasSelectedTab && (
+          <div className="flex justify-center mt-16 animate-fade-up">
+            <div className="text-muted-foreground text-sm flex flex-col items-center gap-2">
+              <span>Scroll to explore</span>
+              <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full animate-bounce" />
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
