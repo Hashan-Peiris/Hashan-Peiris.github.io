@@ -39,12 +39,7 @@ const Navigation = ({ activeTab, setActiveTab, hasSelectedTab, activeSection, on
   return (
     <nav className={`nav-sticky ${isScrolled ? 'py-3' : 'py-4'}`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Left: Name/Logo (visible when scrolled) */}
-        <div className={`transition-all duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <span className="text-lg font-display font-semibold text-foreground">H. Peiris</span>
-        </div>
-
-        {/* Center: Tab Switcher (always visible in header) */}
+        {/* Left: Tab Switcher (always visible, fixed position) */}
         <div className="flex items-center gap-2 p-1 bg-secondary/50 rounded-full backdrop-blur-sm">
           <button
             onClick={() => setActiveTab('research')}
