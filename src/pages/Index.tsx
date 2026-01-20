@@ -12,7 +12,13 @@ import BlogsSection from '@/components/sections/BlogsSection';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<'research' | 'personal'>('research');
+  const [hasSelectedTab, setHasSelectedTab] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('about');
+
+  const handleTabSelect = (tab: 'research' | 'personal') => {
+    setActiveTab(tab);
+    setHasSelectedTab(true);
+  };
 
   const handleSectionClick = useCallback((sectionId: string) => {
     setActiveSection(sectionId);
@@ -23,20 +29,21 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className={`min-h-screen bg-background text-foreground ${!hasSelectedTab ? 'overflow-hidden h-screen' : ''}`}>
       {/* Animated Materials Science Background */}
       <AnimatedBackground />
 
       {/* Navigation */}
       <Navigation 
         activeTab={activeTab} 
-        setActiveTab={setActiveTab}
+        setActiveTab={handleTabSelect}
+        hasSelectedTab={hasSelectedTab}
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
       />
 
       {/* Hero Section */}
-      <HeroSection activeTab={activeTab} setActiveTab={setActiveTab} />
+      <HeroSection activeTab={activeTab} setActiveTab={handleTabSelect} hasSelectedTab={hasSelectedTab} />
 
       {/* Content Sections */}
       <main className="relative z-10">
