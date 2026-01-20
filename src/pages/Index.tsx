@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -11,8 +12,35 @@ import PhotosSection from '@/components/sections/PhotosSection';
 import BlogsSection from '@/components/sections/BlogsSection';
 
 const Index = () => {
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState<'research' | 'personal'>('research');
+  const [hasSelectedTab, setHasSelectedTab] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('about');
+
+  // Handle navigation state from blog posts
+  useEffect(() => {
+    const state = location.state as { tab?: 'research' | 'personal'; section?: string } | null;
+    if (state?.tab) {
+      setActiveTab(state.tab);
+      setHasSelectedTab(true);
+      
+      // Scroll to section after a brief delay to allow content to render
+      if (state.section) {
+        setActiveSection(state.section);
+        setTimeout(() => {
+          const element = document.getElementById(state.section!);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    }
+  }, [location.state]);
+
+  const handleTabSelect = (tab: 'research' | 'personal') => {
+    setActiveTab(tab);
+    setHasSelectedTab(true);
+  };
 
   const handleSectionClick = useCallback((sectionId: string) => {
     setActiveSection(sectionId);
@@ -23,20 +51,21 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className={`min-h-screen bg-background text-foreground ${!hasSelectedTab ? 'overflow-hidden h-screen' : ''}`}>
       {/* Animated Materials Science Background */}
       <AnimatedBackground />
 
       {/* Navigation */}
       <Navigation 
         activeTab={activeTab} 
-        setActiveTab={setActiveTab}
+        setActiveTab={handleTabSelect}
+        hasSelectedTab={hasSelectedTab}
         activeSection={activeSection}
         onSectionClick={handleSectionClick}
       />
 
       {/* Hero Section */}
-      <HeroSection activeTab={activeTab} setActiveTab={setActiveTab} />
+      <HeroSection activeTab={activeTab} setActiveTab={handleTabSelect} hasSelectedTab={hasSelectedTab} />
 
       {/* Content Sections */}
       <main className="relative z-10">

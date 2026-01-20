@@ -1,32 +1,6 @@
+import { Link } from 'react-router-dom';
 import { FileText, Calendar, ArrowRight } from 'lucide-react';
-
-// Placeholder blogs - would be populated with actual content
-const blogs = [
-  {
-    id: 1,
-    title: 'Getting Started with DFT Calculations',
-    excerpt: 'An introduction to Density Functional Theory and how it applies to materials science research...',
-    date: '2024-01-15',
-    readTime: '5 min read',
-    tags: ['DFT', 'Tutorial'],
-  },
-  {
-    id: 2,
-    title: 'My Journey in Computational Materials Science',
-    excerpt: 'Reflecting on the path from traditional materials engineering to computational approaches...',
-    date: '2024-02-20',
-    readTime: '8 min read',
-    tags: ['Career', 'Personal'],
-  },
-  {
-    id: 3,
-    title: 'Understanding Battery Interface Chemistry',
-    excerpt: 'A deep dive into the complex reactions happening at cathode-electrolyte interfaces...',
-    date: '2024-03-10',
-    readTime: '10 min read',
-    tags: ['Battery', 'Research'],
-  },
-];
+import { blogs } from '@/data/blogs';
 
 const BlogsSection = () => {
   return (
@@ -43,9 +17,10 @@ const BlogsSection = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogs.map((blog, index) => (
-          <article 
+          <Link 
             key={blog.id}
-            className="glass-card animate-fade-up group cursor-pointer"
+            to={`/blog/${blog.slug}`}
+            className="glass-card animate-fade-up group cursor-pointer block"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
@@ -76,7 +51,7 @@ const BlogsSection = () => {
             <span className="inline-flex items-center gap-1 text-sm text-primary group-hover:gap-2 transition-all">
               Read more <ArrowRight size={14} />
             </span>
-          </article>
+          </Link>
         ))}
       </div>
 

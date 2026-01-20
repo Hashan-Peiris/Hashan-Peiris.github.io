@@ -4,11 +4,12 @@ import { Download, Mail } from 'lucide-react';
 interface NavigationProps {
   activeTab: 'research' | 'personal';
   setActiveTab: (tab: 'research' | 'personal') => void;
+  hasSelectedTab: boolean;
   activeSection?: string;
   onSectionClick: (section: string) => void;
 }
 
-const Navigation = ({ activeTab, setActiveTab, activeSection, onSectionClick }: NavigationProps) => {
+const Navigation = ({ activeTab, setActiveTab, hasSelectedTab, activeSection, onSectionClick }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,29 +39,24 @@ const Navigation = ({ activeTab, setActiveTab, activeSection, onSectionClick }: 
   return (
     <nav className={`nav-sticky ${isScrolled ? 'py-3' : 'py-4'}`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Left: Name/Logo (visible when scrolled) */}
-        <div className={`transition-all duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <span className="text-lg font-display font-semibold text-foreground">H. Peiris</span>
-        </div>
-
-        {/* Center: Tab Switcher (moves here when scrolled) */}
-        <div className={`flex items-center gap-2 transition-all duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none absolute left-1/2 -translate-x-1/2'}`}>
+        {/* Left: Tab Switcher (always visible, fixed position) */}
+        <div className="flex items-center gap-2 p-1 bg-secondary/50 rounded-full backdrop-blur-sm">
           <button
             onClick={() => setActiveTab('research')}
-            className={`tab-btn ${activeTab === 'research' ? 'active' : ''}`}
+            className={`tab-btn ${hasSelectedTab && activeTab === 'research' ? 'active' : ''}`}
           >
             Research
           </button>
           <button
             onClick={() => setActiveTab('personal')}
-            className={`tab-btn ${activeTab === 'personal' ? 'active' : ''}`}
+            className={`tab-btn ${hasSelectedTab && activeTab === 'personal' ? 'active' : ''}`}
           >
             Personal
           </button>
         </div>
 
-        {/* Right: Section Links (context-aware based on active tab) */}
-        <div className="flex items-center gap-1">
+        {/* Right: Section Links (only visible after tab selection) */}
+        <div className={`flex items-center gap-1 transition-all duration-300 ${hasSelectedTab ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           {currentLinks.map((link) => (
             <button
               key={link.id}
@@ -71,7 +67,7 @@ const Navigation = ({ activeTab, setActiveTab, activeSection, onSectionClick }: 
             </button>
           ))}
           
-          {/* CV Download - always visible */}
+          {/* CV Download - visible after tab selection */}
           <a
             href="https://hashan-peiris.github.io/assets/Hashan_Peiris_Resume.pdf"
             target="_blank"
