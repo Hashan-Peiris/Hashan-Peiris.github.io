@@ -133,7 +133,7 @@ const PhotosSection = () => {
             {/* Image */}
             {selectedPhoto && (
               <div 
-                className="relative"
+                className="relative flex flex-col items-center"
                 onClick={(e) => e.stopPropagation()}
               >
                 <img
@@ -142,29 +142,28 @@ const PhotosSection = () => {
                   className="lightbox-image"
                 />
                 {selectedPhoto.caption && (
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                  <div className="w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
                     <p className="text-white text-center">{selectedPhoto.caption}</p>
                   </div>
                 )}
+                {/* Dot indicators - below caption */}
+                <div className="flex gap-2 mt-4">
+                  {photos.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex(index);
+                        setSelectedPhoto(photos[index]);
+                      }}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        index === currentIndex ? 'bg-primary' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             )}
-
-            {/* Dot indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {photos.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCurrentIndex(index);
-                    setSelectedPhoto(photos[index]);
-                  }}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-primary' : 'bg-white/50'
-                  }`}
-                />
-              ))}
-            </div>
           </div>
         </DialogContent>
       </Dialog>
